@@ -4,21 +4,27 @@ import random
 import time, datetime
 import json
 
-client = twitter.Client(bearer_token=config.BEARER_TOKEN ,consumer_key=config.API_KEY, consumer_secret=config.API_SECRET, access_token=config.ACCESS_TOKEN, access_token_secret=config.ACCESS_TOKEN_SECRET)
+client = twitter.Client(
+    bearer_token=config.BEARER_TOKEN,
+    consumer_key=config.API_KEY,
+    consumer_secret=config.API_SECRET,
+    access_token=config.ACCESS_TOKEN,
+    access_token_secret=config.ACCESS_TOKEN_SECRET,
+)
 
-screen_name = 'AM_EllaJKT48'
+screen_name = "L_MarshaJKT48"
 
-user_id = '1487291928257654785'
+user_id = "1222075070404689922"
 
-response = client.get_users_tweets(user_id, max_results='5')
+response = client.get_users_tweets(user_id, max_results="5")
 
 # By default, only the ID and text fields of each Tweet will be returned
 # for tweet in response.data:
 #    print(tweet.id)
- #   print(tweet.text)
+#   print(tweet.text)
 
 
-def retweet_ella(delay):
+def retweet_marsha(delay):
     print(f"\n{datetime.datetime.now()}\n")
 
     while True:
@@ -27,10 +33,6 @@ def retweet_ella(delay):
             print(tweet.text)
             client.retweet(tweet.id)
         time.sleep(300)
-retweet_ella(300)
 
 
-
-
-
-
+retweet_marsha(300)
